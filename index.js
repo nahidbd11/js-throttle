@@ -12,9 +12,10 @@ function throttle(fn, delay) {
   };
 }
 
-function clicklog() {
-  console.log('hellow world');
+function clicklog(name) {
+  console.log(`hellow ${name}`);
 }
+const logger = throttle(clicklog, 3000);
 document
   .querySelector('button')
-  .addEventListener('click', throttle(clicklog, 3000));
+  .addEventListener('click', () => logger('nahid'));
